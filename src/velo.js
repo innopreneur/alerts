@@ -14,8 +14,8 @@ async function checkPrices() {
   console.log('resp', priceResp.status)
   if (priceResp.status == 200) {
     console.log('data', priceResp.data[veloTokenAddress])
-    if (priceResp.data[veloTokenAddress]?.usd) {
-      const price = Number(priceResp.data[veloTokenAddress]?.usd)
+    if (priceResp.data[veloTokenAddress]['usd']) {
+      const price = Number(priceResp.data[veloTokenAddress]['usd'])
       console.log('price : ', price)
       if (price >= targetPrice) {
         console.log('Price target triggered... Sending message')
