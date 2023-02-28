@@ -11,6 +11,4 @@ jobs:
     steps:
       - name: Coingecko cURL request for $VELO price
         # Hit the webhook endpoint to rebuild  from the "main" branch
-        run: curl -X 'GET' \
-  'https://api.coingecko.com/api/v3/simple/token_price/optimistic-ethereum?contract_addresses=0x3c8b650257cfb5f272f799f5e2b4e65093a11a05&vs_currencies=usd' \
-  -H 'accept: application/json'
+        run: curl -X 'GET' 'https://api.coingecko.com/api/v3/simple/token_price/optimistic-ethereum?contract_addresses=0x3c8b650257cfb5f272f799f5e2b4e65093a11a05&vs_currencies=usd' -H 'accept: application/json'
