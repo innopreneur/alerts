@@ -12,7 +12,7 @@ console.log(discordWebhook)
 async function checkPrices() {
   const priceResp = await axios.get(coingeckoUrl)
   if (priceResp.status == 200) {
-    if (priceResp.data?.veloTokenAddress?.usd) {
+    if (priceResp.data[veloTokenAddress]?.usd) {
       const price = Number(priceResp.data[veloTokenAddress]?.usd)
       if (targetPrice >= price) {
         const message = {
