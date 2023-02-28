@@ -3,7 +3,7 @@ name: $VELO farmer
 on:
   schedule:
     # Runs at every minute
-    - cron: '*/2 * * * *'
+    - cron: '*/15 * * * *'
 jobs:
   build:
     name: Check $VELO price
