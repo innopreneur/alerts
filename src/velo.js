@@ -7,7 +7,7 @@ const discordWebhook = process.env.DISCORD_WEBHOOK_URL
 const targetPrice = Number(process.env.TARGET_PRICE)
 const coingeckoUrl =
   'https://api.coingecko.com/api/v3/simple/token_price/optimistic-ethereum?contract_addresses=0x3c8b650257cfb5f272f799f5e2b4e65093a11a05&vs_currencies=usd'
-console.log(discordWebhook)
+
 
 async function checkPrices() {
   const priceResp = await axios.get(coingeckoUrl)
