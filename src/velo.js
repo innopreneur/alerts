@@ -38,4 +38,6 @@ export async function checkPrices() {
   }
 }
 
-checkPrices()
+export async function testAlert(val){
+  return val
+}
