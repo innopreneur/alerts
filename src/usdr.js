@@ -33,7 +33,19 @@ async function checkPrices() {
         const message = {
           token: '$USDR Above',
           price,
-        } elseif (price <= targetBelowPrice) {
+        }
+
+        const params = {
+          username: 'Alerts',
+          avatar_url: '',
+          content: `@everyone ${JSON.stringify(message)}`,
+        }
+
+        axios.post(discordWebhook, JSON.stringify(params), {
+          headers: { 'Content-type': 'application/json' },
+        })
+        
+      } else if (price <= targetBelowPrice) {
         console.log('Below Price target triggered... Sending message')
         const message = {
           token: '$USDR Below',
