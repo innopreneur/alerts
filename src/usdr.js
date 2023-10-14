@@ -20,7 +20,7 @@ async function checkPrices() {
       if (price >= targetPrice) {
         console.log('Price target triggered... Sending message')
         const message = {
-          token: '$VELO',
+          token: '$USDR',
           price,
         }
 
