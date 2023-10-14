@@ -12,7 +12,7 @@ const coingeckoUrl =
 async function start() {
   while (true) {
     await checkPrices()
-    await sleep(10)
+    await sleep(30)
   }
 }
 
