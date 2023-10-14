@@ -33,7 +33,7 @@ async function checkPrices() {
         const message = {
           token: '$USDR Above',
           price,
-        } else if (price <= targetBelowPrice) {
+        } elseif (price <= targetBelowPrice) {
         console.log('Below Price target triggered... Sending message')
         const message = {
           token: '$USDR Below',
