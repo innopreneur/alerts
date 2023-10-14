@@ -8,6 +8,16 @@ const targetPrice = Number(process.env.TARGET_PRICE)
 const coingeckoUrl =
   'https://api.coingecko.com/api/v3/simple/token_price/polygon-pos?contract_addresses=0x40379a439d4f6795b6fc9aa5687db461677a2dba&vs_currencies=usd'
 
+async function start(fnToRun, args) {
+  while (true) {
+    await checkPrices()
+    await sleep(10)
+  }
+}
+
+async function sleep(sec: number) {
+  return new Promise((resolve) => setTimeout(resolve, sec * 1000))
+}
 
 async function checkPrices() {
   const priceResp = await axios.get(coingeckoUrl)
@@ -38,4 +48,4 @@ async function checkPrices() {
   }
 }
 
-checkPrices()
+start()
